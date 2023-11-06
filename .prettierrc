@@ -7,11 +7,6 @@
   "printWidth": 80,
   "importOrder": [
     "^(react(/|-)(.*)$)|^(react$)",
-    "^(@okta(/|-)(.*)$)|^(@okta$)",
-    "^(ol(/|-)(.*)$)|^(ol$)",
-    "^(@deck.gl(/|-)(.*)$)|^(@deck.gl$)",
-    "^(deck.gl(/|-)(.*)$)|^(deck.gl$)",
-    "^(@mui(/|-)(.*)$)|^(@mui$)",
     "<THIRD_PARTY_MODULES>",
     "types/(.*)$",
     "configs/(.*)$",

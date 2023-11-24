@@ -1,9 +1,17 @@
+import { useEffect } from "react";
+
+import axios from "axios";
+
 import "./App.css";
 import logo from "./logo.svg";
 
 import "./assets/scss/main.scss";
 
 function App() {
+  useEffect(() => {
+    axios.get("http://localhost:8000/bookings/1", {});
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">

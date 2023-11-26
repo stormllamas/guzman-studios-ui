@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 
-import axios from "axios";
+import useFetchData from "customHooks/services/useFetchData";
 
 import "./assets/scss/main.scss";
 
 function App() {
+  const { getData } = useFetchData("bookings/1");
+
   useEffect(() => {
-    axios.get("http://localhost:8000/bookings/1");
+    getData();
   }, []);
 
   return <div id="app"></div>;

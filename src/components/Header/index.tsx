@@ -5,15 +5,13 @@ import Searchbar from "./Searchbar";
 
 const Header = () => {
   return (
-    <>
-      <CHeader>
-        <CContainer fluid>
-          {/* <CHeaderBrand href="#">Header</CHeaderBrand> */}
-          <Searchbar />
-          <NavItems />
-        </CContainer>
-      </CHeader>
-    </>
+    <CHeader>
+      <CContainer fluid>
+        {/* <CHeaderBrand href="#">Header</CHeaderBrand> */}
+        <Searchbar />
+        <NavItems />
+      </CContainer>
+    </CHeader>
   );
 };
 

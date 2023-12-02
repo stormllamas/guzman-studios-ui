@@ -1,7 +1,6 @@
-.header {
-  .container-fluid {
-    #search-bar {
-      width: unset;
-    }
-  }
+@import "./_partials//header";
+@import "./_partials//sidebar";
+
+* {
+  box-sizing: border-box;
 }

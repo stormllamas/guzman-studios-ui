@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 
-import Header from "components/Header";
+import "@coreui/coreui/dist/css/coreui.min.css";
+
+import Header from "components/header";
+import MainBody from "components/layout/MainBody";
+import Sidebar from "components/sidebar";
 
 import useFetchData from "customHooks/services/useFetchData";
 
 import "./assets/scss/main.scss";
-import '@coreui/coreui/dist/css/coreui.min.css'
 
 function App() {
   const { getData } = useFetchData("bookings/1");
@@ -15,8 +18,11 @@ function App() {
   }, []);
 
   return (
-    <div id="app">
-      <Header />
+    <div id="root">
+      <Sidebar />
+      <MainBody>
+        <Header />
+      </MainBody>
     </div>
   );
 }

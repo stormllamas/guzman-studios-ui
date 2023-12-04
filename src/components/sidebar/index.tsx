@@ -11,10 +11,21 @@ import {
   CSidebarToggler,
 } from "@coreui/react";
 
+import useLayoutStore from "store/layout/layoutStore";
+
 const Sidebar = () => {
+  const sidebarOpen = useLayoutStore((state) => state.sidebarOpen);
+  const sidebarNarrow = useLayoutStore((state) => state.sidebarNarrow);
+  const updateSidebarNarrow = useLayoutStore(
+    (state) => state.updateSidebarNarrow
+  );
+
   return (
-    <CSidebar>
-      <CSidebarBrand>Guzman Studios</CSidebarBrand>
+    <CSidebar unfoldable={sidebarNarrow} visible={sidebarOpen}>
+      <CSidebarBrand className="sidebar-brand-full">
+        GUZMAN STUDIOS
+        <CSidebarToggler onClick={() => updateSidebarNarrow(!sidebarNarrow)} />
+      </CSidebarBrand>
       <CSidebarNav>
         <CNavTitle>Nav Title</CNavTitle>
         <CNavItem href="#">
@@ -26,7 +37,13 @@ const Sidebar = () => {
           With badge
           <CBadge color="primary ms-auto">NEW</CBadge>
         </CNavItem>
-        <CNavGroup toggler="Nav dropdown">
+        <CNavGroup
+          toggler={
+            <>
+              <CIcon customClassName="nav-icon" icon={cilPuzzle} /> Nav dropdown
+            </>
+          }
+        >
           <CNavItem href="#">
             <CIcon customClassName="nav-icon" icon={cilPuzzle} /> Nav dropdown
             item
@@ -37,7 +54,6 @@ const Sidebar = () => {
           </CNavItem>
         </CNavGroup>
       </CSidebarNav>
-      <CSidebarToggler />
     </CSidebar>
   );
 };

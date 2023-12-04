@@ -2,4 +2,17 @@
   position: fixed;
   z-index: 1;
   min-height: 100vh;
+
+  .sidebar-brand {
+    justify-content: space-between;
+    padding: 0 0.75rem 0 1.125rem;
+  }
+
+  .sidebar-toggler {
+    background-color: transparent;
+
+    &::before {
+      width: 2rem;
+    }
+  }
 }

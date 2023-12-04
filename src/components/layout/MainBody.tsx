@@ -1,7 +1,24 @@
+import classNames from "classnames";
+
 import { MainBodyProps } from "types/components/layout";
 
+import useLayoutStore from "store/layout/layoutStore";
+
 const MainBody = ({ children }: MainBodyProps) => {
-  return <div id="main-body">{children}</div>;
+  const sidebarOpen = useLayoutStore((state) => state.sidebarOpen);
+  const sidebarNarrow = useLayoutStore((state) => state.sidebarNarrow);
+
+  return (
+    <div
+      id="main-body"
+      className={classNames("", {
+        full: !sidebarOpen,
+        narrow: sidebarNarrow,
+      })}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default MainBody;

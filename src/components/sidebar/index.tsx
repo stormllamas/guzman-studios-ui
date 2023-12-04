@@ -1,4 +1,4 @@
-import { cilPuzzle, cilSpeedometer } from "@coreui/icons";
+import { cibAlgolia, cilPuzzle, cilSpeedometer } from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 import {
   CBadge,
@@ -23,8 +23,16 @@ const Sidebar = () => {
   return (
     <CSidebar unfoldable={sidebarNarrow} visible={sidebarOpen}>
       <CSidebarBrand className="sidebar-brand-full">
-        GUZMAN STUDIOS
+        <CIcon
+          className="nav-icon text-white me-md-3"
+          icon={cibAlgolia}
+          height={35}
+        />
+        <strong>GUZMAN STUDIOS</strong>
         <CSidebarToggler onClick={() => updateSidebarNarrow(!sidebarNarrow)} />
+      </CSidebarBrand>
+      <CSidebarBrand className="sidebar-brand-narrow">
+        <CIcon className="nav-icon text-white" icon={cibAlgolia} height={35} />
       </CSidebarBrand>
       <CSidebarNav>
         <CNavTitle>Nav Title</CNavTitle>

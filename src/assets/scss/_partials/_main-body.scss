@@ -1,6 +1,7 @@
 #main-body {
   padding-left: 256px;
   transition: padding 0.15s ease-out;
+  min-height: 100vh;
 
   &.narrow {
     padding-left: 64px;

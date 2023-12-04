@@ -11,7 +11,7 @@ const MainBody = ({ children }: MainBodyProps) => {
   return (
     <div
       id="main-body"
-      className={classNames("", {
+      className={classNames("bg-light", {
         full: !sidebarOpen,
         narrow: sidebarNarrow,
       })}

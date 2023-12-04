@@ -14,11 +14,15 @@ const Header = () => {
   return (
     <CHeader>
       <CContainer fluid>
-        <CHeaderToggler onClick={() => updateSidebarOpen(!sidebarOpen)}>
-          <CIcon icon={cilHamburgerMenu} />
-        </CHeaderToggler>
-        <Searchbar />
-        <NavItems />
+        <div className="d-flex left-header">
+          <CHeaderToggler className="me-md-3" onClick={() => updateSidebarOpen(!sidebarOpen)}>
+            <CIcon icon={cilHamburgerMenu} />
+          </CHeaderToggler>
+          <Searchbar />
+        </div>
+        <div className="right-header">
+          <NavItems />
+        </div>
       </CContainer>
     </CHeader>
   );

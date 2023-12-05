@@ -1,4 +1,18 @@
-import { cibAlgolia, cilPuzzle, cilSpeedometer } from "@coreui/icons";
+import { Link } from "react-router-dom";
+
+import {
+  cibAlgolia,
+  cilCalculator,
+  cilClipboard,
+  cilDollar,
+  cilGift,
+  cilGrid,
+  cilMoney,
+  cilPuzzle,
+  cilSpeedometer,
+  cilSpreadsheet,
+  cilUser,
+} from "@coreui/icons";
 import CIcon from "@coreui/icons-react";
 import {
   CBadge,
@@ -35,32 +49,55 @@ const Sidebar = () => {
         <CIcon className="nav-icon text-white" icon={cibAlgolia} height={35} />
       </CSidebarBrand>
       <CSidebarNav>
-        <CNavTitle>Nav Title</CNavTitle>
-        <CNavItem href="#">
-          <CIcon customClassName="nav-icon" icon={cilSpeedometer} />
-          Nav item
-        </CNavItem>
-        <CNavItem href="#">
-          <CIcon customClassName="nav-icon" icon={cilSpeedometer} />
-          With badge
-          <CBadge color="primary ms-auto">NEW</CBadge>
-        </CNavItem>
+        <Link to="/">
+          <CNavItem to="/">
+            <CIcon customClassName="nav-icon" icon={cilSpeedometer} />
+            Dashboard
+          </CNavItem>
+        </Link>
+        <Link to="/transactions">
+          <CNavItem to="/">
+            <CIcon customClassName="nav-icon" icon={cilClipboard} />
+            Transactions
+            <CBadge color="primary ms-auto">NEW</CBadge>
+          </CNavItem>
+        </Link>
+        <CNavTitle>Management</CNavTitle>
         <CNavGroup
           toggler={
             <>
-              <CIcon customClassName="nav-icon" icon={cilPuzzle} /> Nav dropdown
+              <CIcon customClassName="nav-icon" icon={cilDollar} /> Finances
             </>
           }
         >
           <CNavItem href="#">
-            <CIcon customClassName="nav-icon" icon={cilPuzzle} /> Nav dropdown
-            item
+            <CIcon customClassName="nav-icon" icon={cilCalculator} /> Accounting
           </CNavItem>
           <CNavItem href="#">
-            <CIcon customClassName="nav-icon" icon={cilPuzzle} /> Nav dropdown
-            item
+            <CIcon customClassName="nav-icon" icon={cilPuzzle} /> Stocks
           </CNavItem>
         </CNavGroup>
+        <CNavGroup
+          toggler={
+            <>
+              <CIcon customClassName="nav-icon" icon={cilGrid} /> Categories
+            </>
+          }
+        >
+          <CNavItem href="#">
+            <CIcon customClassName="nav-icon" icon={cilMoney} /> Expenses
+          </CNavItem>
+          <CNavItem href="#">
+            <CIcon customClassName="nav-icon" icon={cilGift} /> Packages
+          </CNavItem>
+        </CNavGroup>
+        <CNavTitle>Network</CNavTitle>
+        <CNavItem href="#">
+          <CIcon customClassName="nav-icon" icon={cilSpreadsheet} /> Suppliers
+        </CNavItem>
+        <CNavItem href="#">
+          <CIcon customClassName="nav-icon" icon={cilUser} /> Users
+        </CNavItem>
       </CSidebarNav>
     </CSidebar>
   );

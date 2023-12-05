@@ -6,9 +6,9 @@ import {
   cilClipboard,
   cilDollar,
   cilGift,
-  cilGrid,
+  cilApps,
+  cilGroup,
   cilMoney,
-  cilPuzzle,
   cilSpeedometer,
   cilSpreadsheet,
   cilUser,
@@ -59,7 +59,7 @@ const Sidebar = () => {
           <CNavItem to="/">
             <CIcon customClassName="nav-icon" icon={cilClipboard} />
             Transactions
-            <CBadge color="primary ms-auto">NEW</CBadge>
+            <CBadge color="danger ms-auto">3</CBadge>
           </CNavItem>
         </Link>
         <CNavTitle>Management</CNavTitle>
@@ -74,13 +74,13 @@ const Sidebar = () => {
             <CIcon customClassName="nav-icon" icon={cilCalculator} /> Accounting
           </CNavItem>
           <CNavItem href="#">
-            <CIcon customClassName="nav-icon" icon={cilPuzzle} /> Stocks
+            <CIcon customClassName="nav-icon" icon={cilSpreadsheet} /> Stocks
           </CNavItem>
         </CNavGroup>
         <CNavGroup
           toggler={
             <>
-              <CIcon customClassName="nav-icon" icon={cilGrid} /> Categories
+              <CIcon customClassName="nav-icon" icon={cilApps} /> Categories
             </>
           }
         >
@@ -93,10 +93,10 @@ const Sidebar = () => {
         </CNavGroup>
         <CNavTitle>Network</CNavTitle>
         <CNavItem href="#">
-          <CIcon customClassName="nav-icon" icon={cilSpreadsheet} /> Suppliers
+          <CIcon customClassName="nav-icon" icon={cilUser} /> Users
         </CNavItem>
         <CNavItem href="#">
-          <CIcon customClassName="nav-icon" icon={cilUser} /> Users
+          <CIcon customClassName="nav-icon" icon={cilGroup} /> Suppliers
         </CNavItem>
       </CSidebarNav>
     </CSidebar>

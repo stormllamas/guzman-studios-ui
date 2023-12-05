@@ -3,8 +3,10 @@ import { useEffect } from "react";
 import "@coreui/coreui/dist/css/coreui.min.css";
 
 import Header from "components/header";
+import Content from "components/layout/Content";
 import MainBody from "components/layout/MainBody";
 import Sidebar from "components/sidebar";
+import Transactions from "components/transactions";
 
 import useFetchData from "customHooks/services/useFetchData";
 
@@ -22,6 +24,9 @@ function App() {
       <Sidebar />
       <MainBody>
         <Header />
+        <Content>
+          <Transactions />
+        </Content>
       </MainBody>
     </div>
   );

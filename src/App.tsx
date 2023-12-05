@@ -1,12 +1,8 @@
 import { useEffect } from "react";
+import { RouterProvider } from "react-router-dom";
 
 import "@coreui/coreui/dist/css/coreui.min.css";
-
-import Header from "components/header";
-import Content from "components/layout/Content";
-import MainBody from "components/layout/MainBody";
-import Sidebar from "components/sidebar";
-import Transactions from "components/transactions";
+import router from "routes";
 
 import useFetchData from "customHooks/services/useFetchData";
 
@@ -19,17 +15,7 @@ function App() {
     getData();
   }, []);
 
-  return (
-    <div id="root">
-      <Sidebar />
-      <MainBody>
-        <Header />
-        <Content>
-          <Transactions />
-        </Content>
-      </MainBody>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
